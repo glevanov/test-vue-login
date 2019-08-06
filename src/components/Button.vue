@@ -1,0 +1,23 @@
+<template>
+  <button
+    :type="type"
+  >
+    {{ label }}
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'Button',
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    type: {
+      type: String,
+      default: 'button',
+    },
+  },
+};
+</script>
