@@ -1,7 +1,7 @@
 <template>
   <section class="home">
     <SubHeading
-      :text="greeting"
+      text="Введите имя пользователя чтобы продолжить"
     />
     <InputGroup
       v-model="username"
@@ -31,7 +31,6 @@ export default {
   data() {
     return {
       username: '',
-      greeting: 'Введите имя пользователя чтобы продолжить',
     };
   },
 };
