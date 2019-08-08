@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <h1>Кабинет пользователя</h1>
-    <router-view />
+    <header>
+      <h1>Кабинет пользователя</h1>
+    </header>
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
