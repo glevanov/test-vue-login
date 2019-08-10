@@ -1,18 +1,19 @@
 <template>
   <section class="login">
-    <SubHeading
-      :text="greeting"
-    />
-    <InputGroup
-      v-model="code"
-      label="Пароль"
-      type="password"
-    />
-    <Button
-      label="Отправить код"
-      type="submit"
-      @click.native="getData"
-    />
+    <form @submit.prevent="handleSubmit">
+      <SubHeading
+        :text="greeting"
+      />
+      <InputGroup
+        v-model="code"
+        label="Пароль"
+        type="password"
+      />
+      <Button
+        label="Отправить код"
+        type="submit"
+      />
+    </form>
   </section>
 </template>
 
@@ -33,12 +34,13 @@ export default {
     return {
       code: '',
       URL: 'http://127.0.0.1:5000/check',
-      data: null,
       greeting: `Привет, ${this.$route.params.user}! Введи код для продолжения`,
     };
   },
   methods: {
-    getData() {
+    handleSubmit() {
+      const emptyResponse = '{}';
+
       axios
         .post(
           this.URL, {
@@ -47,8 +49,12 @@ export default {
           },
         )
         .then((response) => {
-          this.data = response.data;
-          console.log(JSON.stringify(this.data));
+          const { data } = response;
+          if (JSON.stringify(data) === emptyResponse) {
+            console.log('Error');
+          } else {
+            this.$router.push({ name: 'dashboard', params: { data } });
+          }
         });
     },
   },

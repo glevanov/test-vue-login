@@ -24,6 +24,7 @@ export default new Router({
       path: '/u/:user/dashboard',
       name: 'dashboard',
       component: Dashboard,
+      props: true,
     },
   ],
 });

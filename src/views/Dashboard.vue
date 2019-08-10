@@ -3,8 +3,8 @@
     <SubHeading
       text="Личный кабинет"
     />
-    <p>Интернет активен в течение {{ minutes }} минут</p>
-    <p>Доступно {{ traffic }} трафика для загрузки</p>
+    <p>Интернет активен в течение {{ data.minutes }} минут</p>
+    <p>Доступно {{ data.traffic }} трафика для загрузки</p>
   </section>
 </template>
 
@@ -17,13 +17,9 @@ export default {
     SubHeading,
   },
   props: {
-    traffic: {
-      type: String,
-      default: '',
-    },
-    minutes: {
-      type: String,
-      default: '',
+    data: {
+      type: Object,
+      required: true,
     },
   },
 };
