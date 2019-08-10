@@ -1,18 +1,18 @@
 <template>
   <section class="home">
-    <SubHeading
-      text="Введите имя пользователя чтобы продолжить"
-    />
-    <InputGroup
-      v-model="username"
-      label="Логин"
-    />
-    <router-link :to="'/u/' + username">
+    <form @submit="handleSubmit">
+      <SubHeading
+        text="Введите имя пользователя чтобы продолжить"
+      />
+      <InputGroup
+        v-model="username"
+        label="Логин"
+      />
       <Button
         label="Далее"
         type="submit"
       />
-    </router-link>
+    </form>
   </section>
 </template>
 
@@ -32,6 +32,14 @@ export default {
     return {
       username: '',
     };
+  },
+  methods: {
+    handleSubmit() {
+      const username = this.username.trim();
+      if (username) {
+        this.$router.push({ path: `/u/${username}` });
+      }
+    },
   },
 };
 </script>
