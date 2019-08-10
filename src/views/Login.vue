@@ -7,7 +7,6 @@
       <InputGroup
         v-model="code"
         label="Пароль"
-        type="password"
       />
       <Button
         label="Отправить код"
@@ -44,8 +43,8 @@ export default {
       axios
         .post(
           this.URL, {
-            username: 'bob',
-            code: 'marley',
+            username: this.$route.params.user,
+            code: this.code,
           },
         )
         .then((response) => {
