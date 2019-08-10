@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <form @submit="handleSubmit">
+    <form @submit.prevent="handleSubmit">
       <SubHeading
         text="Введите имя пользователя чтобы продолжить"
       />
