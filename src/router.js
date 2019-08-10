@@ -17,10 +17,12 @@ export default new Router({
     },
     {
       path: '/u/:user',
+      name: 'login',
       component: Login,
     },
     {
       path: '/u/:user/dashboard',
+      name: 'dashboard',
       component: Dashboard,
     },
   ],
