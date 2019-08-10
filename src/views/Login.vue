@@ -12,6 +12,16 @@
         label="Отправить код"
         type="submit"
       />
+      <template v-if="error">
+        <ErrorMessage
+          message="Неверная комбинация имени пользователя и пароля"
+        />
+        <router-link to="/">
+          <Button
+            label="Вернуться в начало"
+          />
+        </router-link>
+      </template>
     </form>
   </section>
 </template>
@@ -21,6 +31,7 @@ import axios from 'axios';
 import InputGroup from '@/components/InputGroup.vue';
 import Button from '@/components/Button.vue';
 import SubHeading from '@/components/SubHeading.vue';
+import ErrorMessage from '@/components/ErrorMessage.vue';
 
 export default {
   name: 'Login',
@@ -28,9 +39,11 @@ export default {
     InputGroup,
     Button,
     SubHeading,
+    ErrorMessage,
   },
   data() {
     return {
+      error: false,
       code: '',
       URL: 'http://127.0.0.1:5000/check',
       greeting: `Привет, ${this.$route.params.user}! Введи код для продолжения`,
@@ -39,6 +52,7 @@ export default {
   methods: {
     handleSubmit() {
       const emptyResponse = '{}';
+      this.error = false;
 
       axios
         .post(
@@ -50,7 +64,7 @@ export default {
         .then((response) => {
           const { data } = response;
           if (JSON.stringify(data) === emptyResponse) {
-            console.log('Error');
+            this.error = true;
           } else {
             this.$router.push({ name: 'dashboard', params: { data } });
           }
