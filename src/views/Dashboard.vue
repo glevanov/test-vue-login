@@ -3,6 +3,7 @@
     <SubHeading
       text="Личный кабинет"
     />
+    <p>Имя пользователя: {{ this.$route.params.user }}</p>
     <p>Интернет активен в течение {{ data.minutes }} минут</p>
     <p>Доступно {{ data.traffic }} трафика для загрузки</p>
   </section>
