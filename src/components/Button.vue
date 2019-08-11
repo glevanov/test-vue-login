@@ -1,5 +1,6 @@
 <template>
   <button
+    class="button"
     :type="type"
   >
     {{ label }}
@@ -21,3 +22,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './Button.css';
+</style>

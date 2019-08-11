@@ -2,26 +2,24 @@
   <section class="login">
     <form @submit.prevent="handleSubmit">
       <SubHeading
+        class="login__heading"
         :text="greeting"
       />
       <InputGroup
         v-model="code"
+        class="login__input-group"
         label="Пароль"
+        :error="error"
       />
       <Button
         label="Отправить код"
         type="submit"
       />
-      <template v-if="error">
-        <ErrorMessage
-          message="Неверная комбинация имени пользователя и пароля"
-        />
-        <router-link to="/">
-          <Button
-            label="Вернуться в начало"
-          />
-        </router-link>
-      </template>
+      <ErrorMessage
+        v-if="error"
+        class="login__error-message"
+        message="Неверная комбинация имени пользователя и пароля"
+      />
     </form>
   </section>
 </template>
@@ -73,3 +71,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './Login.css';
+</style>

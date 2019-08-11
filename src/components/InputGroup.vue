@@ -1,7 +1,8 @@
 <template>
-  <label>
-    {{ label }}
+  <label class="input-group">
+    <span class="input-group__label">{{ label }}</span>
     <input
+      class="input-group__input"
       :type="type"
       :value="value"
       @input="$emit('input', $event.target.value)"
@@ -28,3 +29,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './InputGroup.css';
+</style>

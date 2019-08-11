@@ -1,0 +1,9 @@
+.error-message {
+  margin: 0;
+
+  color: var(--color-error);
+}
+
+.error-message__accent {
+  font-weight: 700;
+}

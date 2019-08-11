@@ -1,0 +1,23 @@
+.button {
+  padding: 10px 15px;
+
+  font: inherit;
+  font-size: 20px;
+  color: var(--color-text-contrast);
+
+  border: none;
+  background: none;
+  background-color: var(--color-input-border);
+  border-radius: 5px;
+
+  transition: color .5s ease-in-out, background-color .5s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-primary);
+}
+
+.button:active {
+  background-color: var(--color-primary-darker);
+}

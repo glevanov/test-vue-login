@@ -1,5 +1,7 @@
 <template>
-  <h2>{{ text }}</h2>
+  <h2 class="sub-heading">
+    {{ text }}
+  </h2>
 </template>
 
 <script>
@@ -13,3 +15,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './SubHeading.css';
+</style>

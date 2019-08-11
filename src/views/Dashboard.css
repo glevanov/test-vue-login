@@ -1,0 +1,13 @@
+.dashboard {}
+
+.dashboard__heading{
+  margin-bottom: 20px;
+}
+
+.dashboard__line {
+  margin: 0 0 10px;
+}
+
+.dashboard__accent {
+  font-weight: 700;
+}

@@ -1,5 +1,7 @@
 <template>
-  <p>Ошибка: {{ message }}</p>
+  <p class="error-message">
+    <span class="error-message__accent">Ошибка:</span> {{ message }}
+  </p>
 </template>
 
 <script>
@@ -13,3 +15,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './ErrorMessage.css';
+</style>

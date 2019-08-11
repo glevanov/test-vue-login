@@ -1,11 +1,18 @@
 <template>
   <section class="dashboard">
     <SubHeading
+      class="dashboard__heading"
       text="Личный кабинет"
     />
-    <p>Имя пользователя: {{ this.$route.params.user }}</p>
-    <p>Интернет активен в течение {{ data.minutes }} минут</p>
-    <p>Доступно {{ data.traffic }} трафика для загрузки</p>
+    <p class="dashboard__line">
+      Имя пользователя: <span class="dashboard__accent">{{ this.$route.params.user }}</span>
+    </p>
+    <p class="dashboard__line">
+      Интернет активен в течение <span class="dashboard__accent">{{ data.minutes }}</span> минут
+    </p>
+    <p class="dashboard__line">
+      Доступно <span class="dashboard__accent">{{ data.traffic }}</span> трафика для загрузки
+    </p>
   </section>
 </template>
 
@@ -25,3 +32,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './Dashboard.css';
+</style>

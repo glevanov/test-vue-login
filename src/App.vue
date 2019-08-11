@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <header class="header">
-      <div class="wrapper">
+      <div class="wrapper header__wrap">
         <h1 class="header__heading">
           Кабинет пользователя
         </h1>
+        <router-link
+          to="/"
+          class="header__home"
+          aria-label="Вернуться на главную"
+        >
+          <img
+            src="./assets/home.svg"
+            alt="Иконка дома"
+            height="38"
+          >
+        </router-link>
       </div>
     </header>
-    <main>
+    <main class="main">
       <div class="wrapper">
         <router-view />
       </div>
@@ -15,33 +26,8 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   @import '~normalize.css';
   @import './root.css';
-
-  #app {
-    font-family: -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI, Roboto,
-    Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-  }
-
-  .wrapper {
-    max-width: 512px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .header {
-    background-color: var(--color-primary);
-  }
-
-  .header__heading {
-    margin: 0;
-
-    color: var(--color-text-contrast);
-  }
+  @import './App.css';
 </style>

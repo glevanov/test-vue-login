@@ -2,13 +2,16 @@
   <section class="home">
     <form @submit.prevent="handleSubmit">
       <SubHeading
+        class="home__heading"
         text="Введите имя пользователя чтобы продолжить"
       />
       <InputGroup
         v-model="username"
+        class="home__input-group"
         label="Логин"
       />
       <Button
+        class="home__button"
         label="Далее"
         type="submit"
       />
@@ -43,3 +46,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  @import './Home.css';
+</style>
