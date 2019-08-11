@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
+import NotFound from '@/views/NotFound.vue';
 
 Vue.use(Router);
 
@@ -26,5 +27,6 @@ export default new Router({
       component: Dashboard,
       props: true,
     },
+    { path: '*', component: NotFound },
   ],
 });
