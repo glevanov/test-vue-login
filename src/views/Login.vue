@@ -43,7 +43,7 @@ export default {
       hasError: false,
       errorText: 'Неверная комбинация имени пользователя и кода',
       code: '',
-      URL: 'http://127.0.0.1:5000/check',
+      URL: 'https://glevanov-test-login.herokuapp.com/check',
       greeting: `Привет, ${this.$route.params.user}! Введи код для продолжения`,
     };
   },
