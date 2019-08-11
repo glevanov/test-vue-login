@@ -9,16 +9,15 @@
         v-model="code"
         class="login__input-group"
         label="Пароль"
-        :error="error"
       />
       <Button
         label="Отправить код"
         type="submit"
       />
       <ErrorMessage
-        v-if="error"
+        v-if="hasError"
         class="login__error-message"
-        message="Неверная комбинация имени пользователя и пароля"
+        :message="errorText"
       />
     </form>
   </section>
@@ -41,7 +40,8 @@ export default {
   },
   data() {
     return {
-      error: false,
+      hasError: false,
+      errorText: 'Неверная комбинация имени пользователя и пароля',
       code: '',
       URL: 'http://127.0.0.1:5000/check',
       greeting: `Привет, ${this.$route.params.user}! Введи код для продолжения`,
@@ -50,7 +50,7 @@ export default {
   methods: {
     handleSubmit() {
       const emptyResponse = '{}';
-      this.error = false;
+      this.hasError = false;
 
       axios
         .post(
@@ -62,10 +62,15 @@ export default {
         .then((response) => {
           const { data } = response;
           if (JSON.stringify(data) === emptyResponse) {
-            this.error = true;
+            this.hasError = true;
+            this.errorText = 'Неверная комбинация имени пользователя и пароля';
           } else {
             this.$router.push({ name: 'dashboard', params: { data } });
           }
+        })
+        .catch((error) => {
+          this.hasError = true;
+          this.errorText = `${error}`;
         });
     },
   },
