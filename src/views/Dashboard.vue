@@ -8,10 +8,10 @@
       Имя пользователя: <span class="dashboard__accent">{{ this.$route.params.user }}</span>
     </p>
     <p class="dashboard__line">
-      Интернет активен в течение <span class="dashboard__accent">{{ data.minutes }}</span> минут
+      Интернет активен в течение <span class="dashboard__accent">{{ data.minutes }} минут</span>
     </p>
     <p class="dashboard__line">
-      Доступно <span class="dashboard__accent">{{ data.traffic }}</span> трафика для загрузки
+      Доступно <span class="dashboard__accent">{{ data.traffic }} мб</span> трафика для загрузки
     </p>
   </section>
 </template>
