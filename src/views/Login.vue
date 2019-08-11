@@ -8,7 +8,7 @@
       <InputGroup
         v-model="code"
         class="login__input-group"
-        label="Пароль"
+        label="Код"
       />
       <Button
         label="Отправить код"
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       hasError: false,
-      errorText: 'Неверная комбинация имени пользователя и пароля',
+      errorText: 'Неверная комбинация имени пользователя и кода',
       code: '',
       URL: 'http://127.0.0.1:5000/check',
       greeting: `Привет, ${this.$route.params.user}! Введи код для продолжения`,
@@ -52,26 +52,31 @@ export default {
       const emptyResponse = '{}';
       this.hasError = false;
 
-      axios
-        .post(
-          this.URL, {
-            username: this.$route.params.user,
-            code: this.code,
-          },
-        )
-        .then((response) => {
-          const { data } = response;
-          if (JSON.stringify(data) === emptyResponse) {
+      if (!this.code.trim()) {
+        this.hasError = true;
+        this.errorText = 'Код не может быть пустым';
+      } else {
+        axios
+          .post(
+            this.URL, {
+              username: this.$route.params.user,
+              code: this.code.trim(),
+            },
+          )
+          .then((response) => {
+            const { data } = response;
+            if (JSON.stringify(data) === emptyResponse) {
+              this.hasError = true;
+              this.errorText = 'Неверная комбинация имени пользователя и пароля';
+            } else {
+              this.$router.push({ name: 'dashboard', params: { data } });
+            }
+          })
+          .catch((error) => {
             this.hasError = true;
-            this.errorText = 'Неверная комбинация имени пользователя и пароля';
-          } else {
-            this.$router.push({ name: 'dashboard', params: { data } });
-          }
-        })
-        .catch((error) => {
-          this.hasError = true;
-          this.errorText = `${error}`;
-        });
+            this.errorText = `${error}`;
+          });
+      }
     },
   },
 };
