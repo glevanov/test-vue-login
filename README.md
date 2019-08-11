@@ -1,29 +1,31 @@
 # test-vue-login
+Тестовое задание на создание формы логина.
 
-## Project setup
+## Быстрый старт
+Готовое приложение доступно по ссылке [http://glevanov.github.io/test-vue-login/](http://glevanov.github.io/test-vue-login/).
+
+Для локальной установки:
 ```
+git clone https://github.com/glevanov/test-vue-login.git
+cd test-login-server
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Стэк
+При выполнении задания использованы Vue (включая vue-cli и vue-router), axios, ванильный CSS и сервер на Express.
 
-### Run your tests
-```
-yarn run test
-```
+## Описание
+Приложение состоит из нескольких экранов:
+1) Ввод имени пользователя
+1) Ввод проверочного кода
+1) Личный кабинет
 
-### Lints and fixes files
-```
-yarn run lint
-```
+Имя пользователя задаётся из адресной строки (пути вида ```/u/kate```), но возможно также ввести его вручную через форму ввода.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Для целей тестирования доступны:
+* username: ```bob```
+* code: ```marley```
+
+Для работы приложения используется тестовый сервер [(см. на GitHub)](https://github.com/glevanov/test-login-server).
+Готовый сервер развёрнут на [heroku](https://glevanov-test-login.herokuapp.com/).
