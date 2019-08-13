@@ -33,6 +33,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './Dashboard.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './Dashboard.scss';
 </style>

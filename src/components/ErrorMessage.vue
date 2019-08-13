@@ -16,6 +16,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './ErrorMessage.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './ErrorMessage.scss';
 </style>

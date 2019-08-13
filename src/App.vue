@@ -26,8 +26,7 @@
   </div>
 </template>
 
-<style scoped>
-  @import '~normalize.css';
-  @import './root.css';
-  @import './App.css';
+<style lang="scss">
+  @import './variables.scss';
+  @import './App.scss';
 </style>

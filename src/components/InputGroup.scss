@@ -13,13 +13,13 @@
 .input-group__input {
   padding: 10px;
 
-  border: 2px solid var(--color-input-border);
+  border: 2px solid $color-input-border;
   border-radius: 5px;
 
   transition: color .5s ease-in-out, border-color .5s ease-in-out;
-}
 
-.input-group__input:focus,
-.input-group__input:active {
-  border-color: var(--color-primary);
+  &:focus,
+  &:active {
+    border-color: $color-primary;
+  }
 }

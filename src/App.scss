@@ -20,14 +20,14 @@
   padding: 10px 0;
   margin-bottom: 20px;
 
-  background-color: var(--color-primary);
+  background-color: $color-primary;
 }
 
 .header__heading {
   margin: 0;
 
   font-size: 32px;
-  color: var(--color-text-contrast);
+  color: $color-text-contrast;
 }
 
 .header__wrap {
@@ -38,11 +38,9 @@
 
 .header__home {
   opacity: 0.7;
-}
 
-.header__home:hover,
-.header__home:focus {
-  opacity: 1;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
 }
-
-.main {}

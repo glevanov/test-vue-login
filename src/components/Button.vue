@@ -23,6 +23,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './Button.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './Button.scss';
 </style>

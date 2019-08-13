@@ -16,6 +16,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './SubHeading.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './SubHeading.scss';
 </style>

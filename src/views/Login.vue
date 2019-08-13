@@ -82,6 +82,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './Login.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './Login.scss';
 </style>

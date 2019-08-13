@@ -30,6 +30,7 @@ export default {
 };
 </script>
 
-<style scoped>
-  @import './InputGroup.css';
+<style lang="scss">
+  @import '../variables.scss';
+  @import './InputGroup.scss';
 </style>
